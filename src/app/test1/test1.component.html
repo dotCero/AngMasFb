@@ -1,0 +1,23 @@
+<div>
+  <h2>Lista de Jugadores</h2>
+</div>
+<div>
+  <ul class="text" *ngFor="let item of items | async">
+    <li>
+      <div>
+        Nombre: {{item.name}} {{item.lastnames?.one}} {{item.lastnames?.two}}
+      </div>
+      <div>
+        Posición: {{item.position}}
+      </div>
+    </li>
+  </ul>
+</div>
+<div>
+  <h2>Registrar Jugador</h2>
+</div>
+<div>
+  <!--<form #personaForm="ngForm" (ngSubmit)="onSubmit(personaForm)">
+    <input type="text" name="nombre" placeholder="Nombre" #nombre="ngModel">
+  </form>-->
+</div>
