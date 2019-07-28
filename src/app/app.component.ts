@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { AngularFireDatabase} from '@angular/fire/database';
 
 @Component({
   selector: 'app-root',

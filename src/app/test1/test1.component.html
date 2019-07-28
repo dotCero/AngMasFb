@@ -1,23 +1,45 @@
 <div>
-  <h2>Lista de Jugadores</h2>
+    <h2>Lista de Jugadores</h2>
 </div>
 <div>
-  <ul class="text" *ngFor="let item of items | async">
-    <li>
-      <div>
-        Nombre: {{item.name}} {{item.lastnames?.one}} {{item.lastnames?.two}}
-      </div>
-      <div>
-        Posición: {{item.position}}
-      </div>
-    </li>
-  </ul>
+    <ul class="text" *ngFor="let p of people | async">
+        <li>
+            <div>
+                Nombre: {{p.name}} {{p.lastnames?.one}} {{p.lastnames?.two}}
+            </div>
+            <div>
+                Posición: {{p.position}}
+            </div>
+        </li>
+    </ul>
 </div>
 <div>
-  <h2>Registrar Jugador</h2>
+    <h2>Registrar Jugador</h2>
 </div>
 <div>
-  <!--<form #personaForm="ngForm" (ngSubmit)="onSubmit(personaForm)">
-    <input type="text" name="nombre" placeholder="Nombre" #nombre="ngModel">
-  </form>-->
+    <form [formGroup]="testForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Nombre: </label>
+            <input type="text" id="name" placeholder="Nombre" formControlName="name">
+        </div>
+        <div>
+            <label for="one">Apellido 1: </label>
+            <input type="text" id="one" placeholder="Apellido 1" formControlName="one">
+        </div>
+        <div>
+            <label for="two">Apellido 2: </label>
+            <input type="text" id="two" placeholder="Apellido 2" formControlName="two">
+        </div>
+        <div>
+            <label for="photo">Foto: </label>
+            <input type="text" id="photo" placeholder="Foto" formControlName="photo">
+        </div>
+        <div>
+            <label for="position">Posición: </label>
+            <input type="text" id="position" placeholder="Posición" formControlName="position">
+        </div>
+        <div>
+            <button type="submit">Wiii</button>
+        </div>
+    </form>
 </div>
