@@ -9,6 +9,8 @@ import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule} from '@angular/fire/database';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,17 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     Test1Component,
 
   ],
-    imports: [
-        BrowserModule,
-        AngularFireModule.initializeApp(environment.firebase),
-        AngularFireDatabaseModule,
-        FormsModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    FormsModule,
+    ReactiveFormsModule,
+    /*=========================MATERIALIZE====================*/
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
