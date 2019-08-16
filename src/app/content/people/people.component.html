@@ -1,0 +1,30 @@
+<div>
+  <h2>Registrar Persona</h2>
+</div>
+<div>
+  <form [formGroup]="peopleForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nombre: </label>
+      <input type="text" id="name" placeholder="Nombre" formControlName="name">
+    </div>
+    <div>
+      <label for="one">Apellido 1: </label>
+      <input type="text" id="one" placeholder="Apellido 1" formControlName="lastname1">
+    </div>
+    <div>
+      <label for="two">Apellido 2: </label>
+      <input type="text" id="two" placeholder="Apellido 2" formControlName="lastname2">
+    </div>
+    <div>
+      <label for="photo">Foto: </label>
+      <input type="text" id="photo" placeholder="Foto" formControlName="photo">
+    </div>
+    <div>
+      <label for="position">Posición: </label>
+      <input type="text" id="position" placeholder="Posición" formControlName="position">
+    </div>
+    <div>
+      <button type="submit">Guardar</button>
+    </div>
+  </form>
+</div>

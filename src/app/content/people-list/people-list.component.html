@@ -1,0 +1,35 @@
+<h1>
+  Listado Personas
+</h1>
+<table [attr.border]="2">
+  <thead>
+  <th>
+    Nombre Completo
+  </th>
+  <th>
+    Foto
+  </th>
+  <th>
+    Posición
+  </th>
+  <th>
+    KEY
+  </th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let people of peopleList | async">
+    <td>
+      {{people.name}} {{people.lastname1}} {{people.lastname2}}
+    </td>
+    <td>
+      {{people.photo}}
+    </td>
+    <td>
+      {{people.position}}
+    </td>
+    <td>
+      {{people.key}}
+    </td>
+  </tr>
+  </tbody>
+</table>
