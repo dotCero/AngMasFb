@@ -8,16 +8,16 @@ import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule} from '@angular/fire/database';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { PeopleListComponent } from './content/people-list/people-list.component';
 import { PeopleComponent } from './content/people/people.component';
+import { TestingComponent } from './content/testing/testing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeopleListComponent,
     PeopleComponent,
+    TestingComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,10 +25,6 @@ import { PeopleComponent } from './content/people/people.component';
     AngularFireDatabaseModule,
     FormsModule,
     ReactiveFormsModule,
-    /*=========================MATERIALIZE====================*/
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

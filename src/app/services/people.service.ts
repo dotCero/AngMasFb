@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 import {Observable} from 'rxjs';
 import {People} from '../model/people';
-import {map} from "rxjs/operators";
+import {map} from 'rxjs/operators';
+import {AppComponent} from '../app.component';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,8 @@ export class PeopleService {
     this.resultset = database.list('people');
   }
 
-  public getPeoples(): Observable<People[]> {
-    return this.resultset.valueChanges();
+  public getPeoples(): AngularFireList<People> {
+    return this.resultset;
   }
 
   public addPeople(people: People) {
