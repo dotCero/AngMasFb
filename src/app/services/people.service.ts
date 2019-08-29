@@ -1,15 +1,13 @@
 import {Injectable} from '@angular/core';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
-import {Observable} from 'rxjs';
 import {People} from '../model/people';
-import {map} from 'rxjs/operators';
-import {AppComponent} from '../app.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeopleService {
-  private resultset: AngularFireList<People>;
+  private readonly resultset: AngularFireList<People>;
+  public selectedPeople: People = new People();
 
   constructor(database: AngularFireDatabase) {
     this.resultset = database.list('people');

@@ -2,29 +2,30 @@
   <h4>Registrar Persona</h4>
 </div>
 <div>
-  <form [formGroup]="peopleForm" (ngSubmit)="onSubmit()">
-    <div>
+  <form #peopleForm="ngForm" (ngSubmit)="onSubmit(peopleForm)">
+    <input type="hidden" name="key" [(ngModel)]="peopleService.selectedPeople.key">
+    <div class="form-group">
       <label for="name">Nombre: </label>
-      <input type="text" id="name" placeholder="Nombre" formControlName="name">
+      <input type="text" id="name" placeholder="Nombre" name="name"  [(ngModel)]="peopleService.selectedPeople.name" class="form-control">
     </div>
-    <div>
+    <div class="form-group">
       <label for="one">Apellido 1: </label>
-      <input type="text" id="one" placeholder="Apellido 1" formControlName="lastname1">
+      <input type="text" id="one" placeholder="Apellido 1" name="lastname1" class="form-control" [(ngModel)]="peopleService.selectedPeople.lastname1">
     </div>
-    <div>
+    <div class="form-group">
       <label for="two">Apellido 2: </label>
-      <input type="text" id="two" placeholder="Apellido 2" formControlName="lastname2">
+      <input type="text" id="two" placeholder="Apellido 2" name="lastname2" class="form-control" [(ngModel)]="peopleService.selectedPeople.lastname2">
     </div>
-    <div>
+    <div class="form-group">
       <label for="photo">Foto: </label>
-      <input type="text" id="photo" placeholder="Foto" formControlName="photo">
+      <input type="text" id="photo" placeholder="Foto" class="form-control" name="photo" [(ngModel)]="peopleService.selectedPeople.photo">
     </div>
-    <div>
+    <div class="form-group">
       <label for="position">Posición: </label>
-      <input type="text" id="position" placeholder="Posición" formControlName="position">
+      <input type="text" id="position" placeholder="Posición" class="form-control" name="position" [(ngModel)]="peopleService.selectedPeople.position">
     </div>
-    <div>
-      <button type="submit">Guardar</button>
+    <div class="form-group">
+      <button type="submit" class="form-control">Guardar</button>
     </div>
   </form>
 </div>
